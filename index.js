@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static("client/build"));
 
+// production only
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
 });

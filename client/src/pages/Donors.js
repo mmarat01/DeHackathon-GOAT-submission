@@ -100,10 +100,10 @@ export default function Donors() {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        "https://active-citizen-dehackathon.herokuapp.com/api/donors/all"
-      );
+        "https://active-citizen-dehackathon.herokuapp.com//api/donors/all"
+      ); // https://active-citizen-dehackathon.herokuapp.com/ prod
       const resData = await response.json();
-      console.log(resData.data);
+      console.log(resData);
       setDonors(resData.data);
     })();
   }, []);
@@ -130,7 +130,7 @@ export default function Donors() {
       }),
     };
     fetch(
-      "https://active-citizen-dehackathon.herokuapp.com/api/donors/donation",
+      "https://active-citizen-dehackathon.herokuapp.com//api/donors/donation",
       {
         method: "POST",
         headers: {
@@ -224,15 +224,17 @@ export default function Donors() {
         </Modal>
       </Grid>
       <Box display='flex' flexWrap='wrap' p={1}>
-        {donors.map(donor => (
-          <Box p={3} className={classes.gridBox}>
-            <DonatorCard
-              name={donor.name}
-              totalDonations={donor.totalDonations}
-              donationsCount={donor.donationsCount}
-            />
-          </Box>
-        ))}
+        {donors
+          ? donors.map(donor => (
+              <Box p={3} className={classes.gridBox}>
+                <DonatorCard
+                  name={donor.name}
+                  totalDonations={donor.totalDonations}
+                  donationsCount={donor.donationsCount}
+                />
+              </Box>
+            ))
+          : " "}
       </Box>
     </Container>
   );
