@@ -14,7 +14,7 @@ app.use("/api/donors/", donorRouter);
 app.use(express.static(path.join(__dirname, "client/build")));
 // production only?
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
