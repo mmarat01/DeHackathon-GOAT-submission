@@ -100,7 +100,7 @@ export default function Donors() {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        "https://active-citizen-dehackathon.herokuapp.com//api/donors/all"
+        "https://active-citizen-dehackathon.herokuapp.com/api/donors/all"
       ); // https://active-citizen-dehackathon.herokuapp.com/ prod
       const resData = await response.json();
       console.log(resData);
@@ -130,7 +130,7 @@ export default function Donors() {
       }),
     };
     fetch(
-      "https://active-citizen-dehackathon.herokuapp.com//api/donors/donation",
+      "https://active-citizen-dehackathon.herokuapp.com/api/donors/donation",
       {
         method: "POST",
         headers: {
