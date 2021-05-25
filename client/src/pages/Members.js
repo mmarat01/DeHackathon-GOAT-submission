@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Button,
@@ -71,6 +71,8 @@ const useStyles = makeStyles(() => ({
 
 export default function Donors() {
   const classes = useStyles();
+  const [name, setName] = useState();
+
   return (
     <Container className={classes.root}>
       <Grid container xs={12} className={classes.titleBox}>
