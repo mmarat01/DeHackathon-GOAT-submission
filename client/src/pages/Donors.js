@@ -101,7 +101,7 @@ export default function Donors() {
     (async () => {
       const response = await fetch(
         "https://active-citizen-dehackathon.herokuapp.com/api/donors/all"
-      ); // https://active-citizen-dehackathon.herokuapp.com/ prod
+      ); // https://active-citizen-dehackathon.herokuapp.com/ prod base url ; http://localhost:8000/ dev base url
       const resData = await response.json();
       console.log(resData);
       setDonors(resData.data);
