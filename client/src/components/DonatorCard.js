@@ -9,6 +9,7 @@ import React from "react";
 
 const useStyles = makeStyles(() => ({
   root: {
+    padding: "1.25rem 0 0",
     width: "250px",
     raised: "true",
     display: "flex",
@@ -18,8 +19,12 @@ const useStyles = makeStyles(() => ({
     width: "250px",
     height: "250px",
   },
+  content:{
+    padding:"1rem 1.75rem 0"
+  },
   titles: {
     alignContent: "center",
+    fontSize:"1rem",
   },
 }));
 
