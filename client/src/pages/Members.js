@@ -6,10 +6,6 @@ import {
   Grid,
   Box,
   Container,
-  Card,
-  CardMedia,
-  CardActions,
-  CardContent
 } from "@material-ui/core";
 import OrgCard from "../components/OrgCard";
 
