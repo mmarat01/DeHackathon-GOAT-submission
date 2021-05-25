@@ -99,9 +99,7 @@ export default function Donors() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(
-        "https://active-citizen-dehackathon.herokuapp.com/api/donors/all"
-      ); // https://active-citizen-dehackathon.herokuapp.com/ prod base url ; http://localhost:8000/ dev base url
+      const response = await fetch("http://localhost:8000/api/donors/all"); // https://active-citizen-dehackathon.herokuapp.com/ prod base url ; http://localhost:8000/ dev base url
       const resData = await response.json();
       console.log(resData);
       setDonors(resData.data);
@@ -129,16 +127,13 @@ export default function Donors() {
         timeZone: "America/New_York",
       }),
     };
-    fetch(
-      "https://active-citizen-dehackathon.herokuapp.com/api/donors/donation",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(donationData),
-      }
-    )
+    fetch("http://localhost:8000/api/donors/donation", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(donationData),
+    })
       .then(response => response.json())
       .then(data => {
         setSubmitted(true);
