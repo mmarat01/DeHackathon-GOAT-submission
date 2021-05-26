@@ -9,6 +9,7 @@ import {
   TextField,
   Paper,
   Box,
+  InputAdornment,
 } from "@material-ui/core";
 import DonatorCard from "../components/DonatorCard";
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles(() => ({
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingTop:"1.4rem",
   },
   header: {
     display: "flex",
@@ -55,10 +57,10 @@ const useStyles = makeStyles(() => ({
   },
   buttonDonate: {
     backgroundColor: "#abd7eb",
-    borderRadius: "25px",
+    borderRadius: "1.5rem",
     color: "#fff",
     fontWeight: "bold",
-    fontSize: "24px",
+    fontSize: "1.5rem",
     textShadow: "2px 2px #000",
     boxShadow: "2px 2px #000",
     "&:hover": {
@@ -67,7 +69,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   gridBox: {
-    marginTop: "25px",
+    marginTop: "1.5rem",
     direction: "row",
     justifyContent: "space-around",
   },
@@ -92,7 +94,7 @@ export default function Donors() {
 
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("Anonymous");
-  const [donation, setDonation] = useState(0);
+  const [donation, setDonation] = useState(1.00);
   const [submitted, setSubmitted] = useState(false);
   const [donors, setDonors] = useState([]);
 
@@ -203,7 +205,14 @@ export default function Donors() {
                       type='number'
                       value={donation}
                       onChange={handleDonationChange}
-                      inputProps={{ min: "0", step: "0.10" }}
+                      inputProps={{
+                        min: "1.00", 
+                        step: "0.25", 
+                      }}
+                      InputProps={{ 
+                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                        
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12}>

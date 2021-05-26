@@ -3,11 +3,13 @@ import { makeStyles, Box, Typography, Grid, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   root: {
-    margin: "25px",
+    marginLeft: "25px",
+    marginRight: "25px",
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingTop:"1.4rem",
   },
   header: {
     display: "flex",

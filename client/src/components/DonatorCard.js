@@ -41,7 +41,7 @@ export default function DonatorCard(props) {
           Name: {props.name}
         </Typography>
         <Typography className={classes.titles} variant='h6' component='h2'>
-          Donated amount: {props.totalDonations}
+          Donated amount: ${props.totalDonations}
         </Typography>
         <Typography className={classes.titles} variant='h6' component='h2'>
           Num. of donations: {props.donationsCount}
