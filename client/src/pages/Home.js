@@ -5,15 +5,18 @@ import {
   makeStyles,
   Container,
   Grid,
+  Paper,
 } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
-  root: {
+  root: {  
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-evenly",
+    paddingTop:"1.4rem",
+    height:"100vh",
   },
   header: {
     display: "flex",
@@ -27,6 +30,13 @@ const useStyles = makeStyles(() => ({
     marginBottom: "2rem",
     paddingRight: "1rem",
   },
+  paperTitle:{
+    display:"flex",
+    flexDirection:"column",
+    padding:"1rem",
+    alignItems:"center",
+    background:"#EFEFEF"
+  },
   buttonBox: {
     flex: "1",
     display: "flex",
@@ -36,10 +46,10 @@ const useStyles = makeStyles(() => ({
   },
   buttonVote: {
     backgroundColor: "#abd7eb",
-    borderRadius: "25px",
+    borderRadius: "1.5rem",
     color: "#fff",
     fontWeight: "bold",
-    fontSize: "24px",
+    fontSize: "1.5rem",
     textShadow: "2px 2px #000",
     boxShadow: "2px 2px #000",
     "&:hover": {
@@ -49,10 +59,10 @@ const useStyles = makeStyles(() => ({
   },
   buttonDonate: {
     backgroundColor: "#ff6961",
-    borderRadius: "25px",
+    borderRadius: "1.5rem",
     color: "#fff",
     fontWeight: "bold",
-    fontSize: "24px",
+    fontSize: "1.5rem",
     textShadow: "2px 2px #000",
     boxShadow: "2px 2px #000",
     "&:hover": {
@@ -62,43 +72,50 @@ const useStyles = makeStyles(() => ({
   },
   orText: {
     fontWeight: "bold",
-    fontSize: "24px",
+    fontSize: "1.5rem",
+    color:"#fff"
   },
 }));
+
+//hands together Photo by Dio Hasbi Saniskoro from Pexels
 
 export default function Home() {
   const classes = useStyles();
   return (
-    <Grid container className={classes.root}>
-      <Grid container className={classes.header}>
-        <Container className={classes.pageTitle}>
-          <Typography variant='h3' component='h1'>
-            Join Our Mission, help spread wealth and resources to
-            underrepresented groups.
-          </Typography>
-        </Container>
-        <Container className={classes.buttonBox}>
-          <Button
-            variant='contained'
-            component={Link}
-            to='/members'
-            className={classes.buttonVote}>
-            {" "}
-            Vote{" "}
-          </Button>
-          <Typography className={classes.orText}>
-            &nbsp;&nbsp;or&nbsp;&nbsp;{" "}
-          </Typography>
-          <Button
-            variant='contained'
-            component={Link}
-            to='/donors'
-            className={classes.buttonDonate}>
-            {" "}
-            Donate{" "}
-          </Button>
-        </Container>
+      <Grid container className={classes.root}>
+        <Grid container className={classes.header}>
+          <Container className={classes.pageTitle}>
+            <Paper variant="outlined"className={classes.paperTitle}>
+              <Typography variant='h2' component='h1'>
+                Join Our Mission
+              </Typography>
+              <Typography variant='h4'>
+                Help spread wealth and resources to underrepresented groups.
+              </Typography>
+            </Paper>
+          </Container>
+          <Container className={classes.buttonBox}>
+            <Button
+              variant='contained'
+              component={Link}
+              to='/members'
+              className={classes.buttonVote}>
+              {" "}
+              Vote{" "}
+            </Button>
+            <Typography className={classes.orText}>
+              &nbsp;&nbsp;or&nbsp;&nbsp;{" "}
+            </Typography>
+            <Button
+              variant='contained'
+              component={Link}
+              to='/donors'
+              className={classes.buttonDonate}>
+              {" "}
+              Donate{" "}
+            </Button>
+          </Container>
+        </Grid>
       </Grid>
-    </Grid>
   );
 }

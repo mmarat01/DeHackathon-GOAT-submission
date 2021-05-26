@@ -12,7 +12,14 @@ function App() {
     <div className='wrapper'>
       <Switch>
         <Route exact path='/'>
-          <Home />
+        <div style={{
+          minHeight:'100vh',
+          backgroundImage:"url(/assets/hands-together-dio-hasbi-saniskoro-3280130.jpg)",
+          backgroundRepeat:"no-repeat",
+          backgroundSize:"cover",
+          }}>
+            <Home /> 
+          </div>
         </Route>
         <Route path='/donors'>
           <Donors />

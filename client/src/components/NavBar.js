@@ -26,7 +26,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: "#FFFFFF",
-    marginBottom: "20px",
   },
   toolbar: {
     display: "flex",

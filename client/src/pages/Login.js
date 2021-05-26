@@ -10,6 +10,7 @@ const useStyles = makeStyles(()=>({
         alignContent: "center",
         alignItems:"center",
         justifyContent: "center",
+        paddingTop:"1.4rem",
     },
     pageTitle:{
         alignItems:"center",
@@ -28,10 +29,10 @@ const useStyles = makeStyles(()=>({
     },
     submitButton:{
         backgroundColor: "#ff6961",
-        borderRadius: "25px",
+        borderRadius: "1.5rem",
         color: "#fff",
         fontWeight: "bold",
-        fontSize: "24px",
+        fontSize: "1.5rem",
         "&:hover": {
             backgroundColor: "#e6463e",
             textShadow: "none",
