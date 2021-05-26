@@ -6,6 +6,7 @@ import {
   Container,
   Grid,
 } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -79,7 +80,8 @@ export default function Home() {
         <Container className={classes.buttonBox}>
           <Button
             variant='contained'
-            href='/members'
+            component={Link}
+            to='/members'
             className={classes.buttonVote}>
             {" "}
             Vote{" "}
@@ -89,7 +91,8 @@ export default function Home() {
           </Typography>
           <Button
             variant='contained'
-            href='/donors'
+            component={Link}
+            to='/donors'
             className={classes.buttonDonate}>
             {" "}
             Donate{" "}

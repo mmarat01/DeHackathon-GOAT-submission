@@ -14,7 +14,6 @@ import DonatorCard from "../components/DonatorCard";
 
 const useStyles = makeStyles(() => ({
   root: {
-    // margin:"25px",
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",

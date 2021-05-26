@@ -4,6 +4,8 @@ import Home from "./Home";
 import Data from "./Data";
 import Donors from "./Donors";
 import Members from "./Members";
+import Login from "./Login";
+import Register from "./Register";
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
         </Route>
         <Route path='/data'>
           <Data />
+        </Route>
+        <Route path='/login'>
+          <Login/>
+        </Route>
+        <Route path='/register'>
+          <Register/>
         </Route>
       </Switch>
     </div>
