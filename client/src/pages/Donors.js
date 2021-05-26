@@ -9,6 +9,7 @@ import {
   TextField,
   Paper,
   Box,
+  InputAdornment,
 } from "@material-ui/core";
 import DonatorCard from "../components/DonatorCard";
 
@@ -92,7 +93,7 @@ export default function Donors() {
 
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("Anonymous");
-  const [donation, setDonation] = useState(0);
+  const [donation, setDonation] = useState(1.00);
   const [submitted, setSubmitted] = useState(false);
   const [donors, setDonors] = useState([]);
 
@@ -208,7 +209,14 @@ export default function Donors() {
                       type='number'
                       value={donation}
                       onChange={handleDonationChange}
-                      inputProps={{ min: "0", step: "0.10" }}
+                      inputProps={{
+                        min: "1.00", 
+                        step: "0.25", 
+                      }}
+                      InputProps={{ 
+                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                        
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12}>
