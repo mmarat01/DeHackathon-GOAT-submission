@@ -1,5 +1,7 @@
-import { Box, Button, Container, Grid, makeStyles, Paper, TextField, Typography } from "@material-ui/core";
+import { Box, Button, Container, Grid, IconButton, InputAdornment, makeStyles, Paper, TextField, Typography } from "@material-ui/core";
 import React, { useState } from "react";
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 const useStyles = makeStyles(()=>({
     root: {
@@ -42,6 +44,14 @@ export default function Register(){
     const [email,setEmail]=useState("");
     const [pw,setPW]=useState("");
 
+    const [showPW, setshowPW] = useState(false)
+    const handleShowPW = ()=>{
+        setshowPW(!showPW);
+    }
+    const handleMouseDownPW = (e) => {
+    e.preventDefault();
+    };
+
     const handleEmailChange = e => setEmail(e.target.value);
     const handlePWChange = e => setPW(e.target.value);
 
@@ -83,11 +93,24 @@ export default function Register(){
                                         fullWidth
                                         placeholder='*****'
                                         variant='filled'
-                                        type='password'
+                                        type={showPW ? 'text' : 'password'}
                                         value={pw}
                                         onChange={handlePWChange}
+                                        onMouseDown={handleMouseDownPW}
                                         inputProps={{minLength:"1"}}
                                         className={classes.textbox}
+                                        InputProps={{ //from MaterialUI docs
+                                            endAdornment:
+                                            <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleShowPW}
+                                                onMouseDown={handleMouseDownPW}
+                                                >
+                                                {showPW ? <Visibility /> : <VisibilityOff />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        }}
                                     />
                             </Grid>
                             <Grid item xs={12}>
