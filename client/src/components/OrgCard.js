@@ -14,12 +14,16 @@ import {
       display: "flex",
       flexDirection:"column",
       width:"250px",
-      alignContent:"center"
+      alignContent:"center",
+      justifyContent:"center"
     },
     cardMedia: {
       height:"250px",
       width:"250px"
     },
+    cardActionArea:{
+      justifyContent:"center"
+    }
   }));
   
   export default function OrgCard(props) {
@@ -31,8 +35,8 @@ import {
         <CardContent>
           <Typography variant="h5">{props.orgName}</Typography>
         </CardContent>
-        <CardActions>
-          <Button>
+        <CardActions className={classes.cardActionArea}>
+          <Button variant="outlined" color="primary">
             Vote
           </Button>
         </CardActions>
