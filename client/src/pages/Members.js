@@ -7,6 +7,7 @@ import {
   Box,
   Container,
 } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 import OrgCard from "../components/OrgCard";
 
 const useStyles = makeStyles(() => ({
@@ -100,7 +101,7 @@ export default function Members() {
           </Typography>
         </Container>
         <Container className={classes.buttonBox}>
-          <Button variant='contained' href='#' className={classes.buttonDonate}>
+          <Button variant='contained' component={Link} to='/register' className={classes.buttonDonate}>
             Sign Up
           </Button>
         </Container>
