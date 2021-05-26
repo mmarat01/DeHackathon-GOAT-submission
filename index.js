@@ -1,4 +1,5 @@
 const express = require("express");
+const dotenv = require("dotenv").config();
 const db = require("./server/db");
 const cors = require("cors");
 const path = require("path");
@@ -14,10 +15,12 @@ app.use("/api/donors/", donorRouter);
 app.use("/api/voters/", voterRouter);
 
 app.use(express.static(path.join(__dirname, "client/build")));
-// production only?
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "/client/build/index.html"));
-// });
+
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
+}
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 

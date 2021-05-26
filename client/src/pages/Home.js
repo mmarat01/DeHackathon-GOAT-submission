@@ -7,16 +7,16 @@ import {
   Grid,
   Paper,
 } from "@material-ui/core";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
-  root: {  
+  root: {
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-evenly",
-    paddingTop:"1.4rem",
-    height:"100vh",
+    paddingTop: "1.4rem",
+    height: "100vh",
   },
   header: {
     display: "flex",
@@ -30,12 +30,12 @@ const useStyles = makeStyles(() => ({
     marginBottom: "2rem",
     paddingRight: "1rem",
   },
-  paperTitle:{
-    display:"flex",
-    flexDirection:"column",
-    padding:"1rem",
-    alignItems:"center",
-    background:"#EFEFEF"
+  paperTitle: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "1rem",
+    alignItems: "center",
+    background: "#EFEFEF",
   },
   buttonBox: {
     flex: "1",
@@ -73,7 +73,7 @@ const useStyles = makeStyles(() => ({
   orText: {
     fontWeight: "bold",
     fontSize: "1.5rem",
-    color:"#fff"
+    color: "#fff",
   },
 }));
 
@@ -82,40 +82,40 @@ const useStyles = makeStyles(() => ({
 export default function Home() {
   const classes = useStyles();
   return (
-      <Grid container className={classes.root}>
-        <Grid container className={classes.header}>
-          <Container className={classes.pageTitle}>
-            <Paper variant="outlined"className={classes.paperTitle}>
-              <Typography variant='h2' component='h1'>
-                Join Our Mission
-              </Typography>
-              <Typography variant='h4'>
-                Help spread wealth and resources to underrepresented groups.
-              </Typography>
-            </Paper>
-          </Container>
-          <Container className={classes.buttonBox}>
-            <Button
-              variant='contained'
-              component={Link}
-              to='/members'
-              className={classes.buttonVote}>
-              {" "}
-              Vote{" "}
-            </Button>
-            <Typography className={classes.orText}>
-              &nbsp;&nbsp;or&nbsp;&nbsp;{" "}
+    <Grid container className={classes.root}>
+      <Grid container className={classes.header}>
+        <Container className={classes.pageTitle}>
+          <Paper variant='outlined' className={classes.paperTitle}>
+            <Typography variant='h2' component='h1'>
+              Join Our Mission
             </Typography>
-            <Button
-              variant='contained'
-              component={Link}
-              to='/donors'
-              className={classes.buttonDonate}>
-              {" "}
-              Donate{" "}
-            </Button>
-          </Container>
-        </Grid>
+            <Typography variant='h4'>
+              Help spread wealth and resources to underrepresented groups.
+            </Typography>
+          </Paper>
+        </Container>
+        <Container className={classes.buttonBox}>
+          <Button
+            variant='contained'
+            component={Link}
+            to='/members'
+            className={classes.buttonVote}>
+            {" "}
+            Vote{" "}
+          </Button>
+          <Typography className={classes.orText}>
+            &nbsp;&nbsp;or&nbsp;&nbsp;{" "}
+          </Typography>
+          <Button
+            variant='contained'
+            component={Link}
+            to='/donors'
+            className={classes.buttonDonate}>
+            {" "}
+            Donate{" "}
+          </Button>
+        </Container>
       </Grid>
+    </Grid>
   );
 }

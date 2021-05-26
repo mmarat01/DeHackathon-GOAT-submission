@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingTop:"1.4rem",
+    paddingTop: "1.4rem",
   },
   header: {
     display: "flex",
@@ -94,13 +94,17 @@ export default function Donors() {
 
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("Anonymous");
-  const [donation, setDonation] = useState(1.00);
+  const [donation, setDonation] = useState(1.0);
   const [submitted, setSubmitted] = useState(false);
   const [donors, setDonors] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:8000/api/donors/all"); // https://active-citizen-dehackathon.herokuapp.com/ prod base url ; http://localhost:8000/ dev base url
+      const response = await fetch(
+        process.env.NODE_ENV === "production"
+          ? "https://active-citizen-dehackathon.herokuapp.com/api/donors/all"
+          : "http://localhost:8000/api/donors/all"
+      );
       const resData = await response.json();
       console.log(resData);
       setDonors(resData.data);
@@ -128,13 +132,18 @@ export default function Donors() {
         timeZone: "America/New_York",
       }),
     };
-    fetch("http://localhost:8000/api/donors/donation", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(donationData),
-    })
+    fetch(
+      process.env.NODE_ENV === "production"
+        ? "https://active-citizen-dehackathon.herokuapp.com/api/donors/donation"
+        : "http://localhost:8000/api/donors/donation",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(donationData),
+      }
+    )
       .then(response => response.json())
       .then(data => {
         setSubmitted(true);
@@ -206,12 +215,13 @@ export default function Donors() {
                       value={donation}
                       onChange={handleDonationChange}
                       inputProps={{
-                        min: "1.00", 
-                        step: "0.25", 
+                        min: "1.00",
+                        step: "0.25",
                       }}
-                      InputProps={{ 
-                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
-                        
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position='start'>$</InputAdornment>
+                        ),
                       }}
                     />
                   </Grid>

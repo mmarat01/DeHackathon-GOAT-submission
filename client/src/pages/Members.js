@@ -7,7 +7,7 @@ import {
   Box,
   Container,
 } from "@material-ui/core";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import OrgCard from "../components/OrgCard";
 
 const useStyles = makeStyles(() => ({
@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingTop:"1.4rem",
+    paddingTop: "1.4rem",
   },
   header: {
     display: "flex",
@@ -133,12 +133,16 @@ export default function Members() {
     <Container className={classes.root}>
       <Grid container xs={12} className={classes.titleBox}>
         <Container className={classes.pageTitle}>
-          <Typography variant='h2' component='h1'>
+          <Typography variant='h2' component='h1' p={2}>
             Become a member, Start voting.
           </Typography>
         </Container>
         <Container className={classes.buttonBox}>
-          <Button variant='contained' component={Link} to='/register' className={classes.buttonDonate}>
+          <Button
+            variant='contained'
+            component={Link}
+            to='/register'
+            className={classes.buttonDonate}>
             Sign Up
           </Button>
         </Container>
