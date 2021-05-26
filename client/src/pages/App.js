@@ -17,15 +17,30 @@ function App() {
           backgroundImage:"url(/assets/hands-together-dio-hasbi-saniskoro-3280130.jpg)",
           backgroundRepeat:"no-repeat",
           backgroundSize:"cover",
+          //Photo by Dio Hasbi from Pexels
           }}>
             <Home /> 
           </div>
         </Route>
         <Route path='/donors'>
+        <div style={{
+          minHeight:'100vh',
+          backgroundImage:"url(/assets/donors-pexels-sergio-souza-5048472.jpg)",
+          backgroundRepeat:"no-repeat",
+          backgroundSize:"cover", //Photo by sergio souza from Pexels
+          }}>
           <Donors />
+        </div>
         </Route>
         <Route path='/members'>
-          <Members />
+          <div style={{
+            minHeight:'100vh',
+            backgroundImage:"url(/assets/members-pexels-polina-zimmerman-3782226.jpg)",
+            backgroundRepeat:"no-repeat",
+            backgroundSize:"cover", //Photo by sergio souza from Pexels
+            }}>
+            <Members />
+          </div>
         </Route>
         <Route path='/data'>
           <Data />

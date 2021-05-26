@@ -85,7 +85,7 @@ export default function Home() {
       <Grid container className={classes.root}>
         <Grid container className={classes.header}>
           <Container className={classes.pageTitle}>
-            <Paper variant="outlined"className={classes.paperTitle}>
+            <Paper variant="outlined" className={classes.paperTitle}>
               <Typography variant='h2' component='h1'>
                 Join Our Mission
               </Typography>
