@@ -94,7 +94,6 @@ export default function Home() {
             </Typography>
           </Paper>
         </Container>
-
         <Container className={classes.buttonBox}>
           <Button
             variant='contained'
