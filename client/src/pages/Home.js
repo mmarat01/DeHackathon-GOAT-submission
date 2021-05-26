@@ -95,6 +95,21 @@ export default function Home() {
           </Paper>
         </Container>
         <Container className={classes.buttonBox}>
+          <Paper>
+            <Button
+              variant='contained'
+              component={Link}
+              to='/members'
+              className={classes.buttonVote}>
+              {" "}
+              Vote{" "}
+            </Button>
+            <Typography className={classes.orText}>
+              &nbsp;&nbsp;or&nbsp;&nbsp;{" "}
+            </Typography>
+          </Paper>
+        </Container>
+        <Container className={classes.buttonBox}>
           <Button
             variant='contained'
             component={Link}

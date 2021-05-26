@@ -6,6 +6,7 @@ import {
   Grid,
   Box,
   Container,
+  Paper,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import OrgCard from "../components/OrgCard";
@@ -26,11 +27,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-between",
   },
   titleBox: {
-    //Photo by <a href="https://unsplash.com/@omarlopez1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Omar Lopez</a> on <a href="https://unsplash.com/s/photos/community?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    backgroundImage: "url(/assets/donators_img.jpg)",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    flexDirection: "column",
+    flexDirection: "row",
     flexGrow: 1,
     width: "100%",
   },
@@ -45,6 +42,7 @@ const useStyles = makeStyles(() => ({
   },
   pageTitle: {
     flex: "1",
+    flexDirection: "row",
     marginBottom: "2rem",
   },
   buttonBox: {
@@ -72,6 +70,13 @@ const useStyles = makeStyles(() => ({
     marginTop: "1.5rem",
     direction: "row",
     justifyContent: "space-around",
+  },
+  paperTitle: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "1rem",
+    alignItems: "center",
+    background: "#EFEFEF",
   },
 }));
 
@@ -133,9 +138,11 @@ export default function Members() {
     <Container className={classes.root}>
       <Grid container xs={12} className={classes.titleBox}>
         <Container className={classes.pageTitle}>
-          <Typography variant='h2' component='h1' p={2}>
-            Become a member, Start voting.
-          </Typography>
+          <Paper variant='outlined' className={classes.paperTitle}>
+            <Typography variant='h3' component='h1'>
+              Become a member and start voting!
+            </Typography>
+          </Paper>
         </Container>
         <Container className={classes.buttonBox}>
           <Button

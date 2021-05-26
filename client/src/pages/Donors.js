@@ -29,13 +29,10 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-between",
   },
   titleBox: {
-    //Photo by <a href="https://unsplash.com/@omarlopez1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Omar Lopez</a> on <a href="https://unsplash.com/s/photos/community?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    backgroundImage: "url(/assets/donators_img.jpg)",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    flexDirection: "column",
+    flexDirection: "row",
     flexGrow: 1,
     width: "100%",
+    marginBottom: "2rem",
   },
   cardRoot: {
     display: "flex",
@@ -45,7 +42,14 @@ const useStyles = makeStyles(() => ({
   },
   pageTitle: {
     flex: "1",
-    marginBottom: "2rem",
+  },
+  paperTitle:{
+    display:"flex",
+    flexDirection:"column",
+    padding:"1rem",
+    alignItems:"center",
+    justifyContent:"center",
+    background:"#EFEFEF"
   },
   buttonBox: {
     flex: "1",
@@ -158,9 +162,14 @@ export default function Donors() {
     <Container className={classes.root}>
       <Grid container className={classes.titleBox}>
         <Container className={classes.pageTitle}>
-          <Typography variant='h2' component='h1'>
-            Every Donation Counts. Say hello to our Hall of Donors.
-          </Typography>
+          <Paper variant="outlined" className={classes.paperTitle}>
+            <Typography variant='h2' component='h1'>
+              Every Donation Counts.
+            </Typography>
+            <Typography variant='h4'>
+              Say hello to our Hall of Donors.
+            </Typography>
+          </Paper>
         </Container>
         <Container className={classes.buttonBox}>
           <Button
